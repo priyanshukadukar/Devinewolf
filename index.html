@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Saltwater Grill Header Clone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;600&family=Open+Sans:wght@400;600&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <!-- Toggle button will appear on RIGHT in mobile -->
+            <button class="menu-toggle" id="toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Desktop navigation left -->
+            <div class="nav-left">
+                <a href="menu.html" class="active">MENU</a>
+                <a href="drink.html">DRINKS</a>
+                <a href="#">SPECIALS</a>
+            </div>
+
+            <!-- Logo stays centered in desktop, left in mobile -->
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="image/Untitled design (15).png" alt="Divine Wolf Logo">
+                </a>
+            </div>
+
+            <!-- Desktop navigation right -->
+            <div class="nav-right">
+                <a href="Catering.html">CATERING</a>
+                <a href="hookah.html">HOOKAH</a>
+                <a href="about.html">ABOUT</a>
+                <div class="nav-social">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-google"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= MOBILE MENU ================= -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="menu.html">MENU</a>
+        <a href="drink.html">DRINKS</a>
+        <a href="#">SPECIALS</a>
+        <a href="catering.html">CATERING</a>
+        <a href="hookah.html">HOOKAH</a>
+        <a href="about.html">ABOUT</a>
+    </div>
+
+    <!-- ================= HERO VIDEO ================= -->
+    <section class="hero">
+        <video id="heroVideo" autoplay muted playsinline loop>
+            <source src="video/Green Simple Nature YouTube Video Ad (3).mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- ================= ANIMATED CONTENT ================= -->
+    <div class="hero-container">
+        <div class="content-wrapper">
+            <h1 class="main-title">UNLEASH THE EXPERIENCE</h1>
+            <p class="tagline">Where bold flavors meet unforgettable moments.</p>
+            <p class="description">
+                At Divine Wolf, we blend culinary artistry with a fierce passion for great food, crafted experiences,
+                and community connection. Step into a world where every dish is inspired, every gathering an event, and
+                every visit a memory waiting to happen
+            </p>
+            <button class="cta-button">READ MORE</button>
+        </div>
+    </div>
+
+    <!-- ================= FUSION SECTION ================= -->
+    <section class="fusion-section">
+        <div class="fusion-content">
+            <h1 class="animate-left">SAVOR THE FLAVOR</h1>
+            <h3 class="animate-left" style="transition-delay:.15s">
+                Unleash Taste Like Never Before
+            </h3>
+            <p class="animate-left" style="transition-delay:.3s">
+                From chef-crafted signature dishes to a bold and diverse menu, Divine Wolf delivers something for every
+                craving. Whether you're in the mood for savory starters, perfectly grilled entrées, handcrafted
+                specialties, or indulgent favorites, our menu is designed to excite your palate. Explore our daily
+                selections and discover why Divine Wolf is becoming the go-to destination for unforgettable dining
+                experiences.
+            </p>
+            <a href="menu.html" class="btn animate-left" style="transition-delay:.45s">
+                MENU
+            </a>
+        </div>
+        <div class="fusion-image">
+            <img src="image/side-view-chicken-burger-with-pickles-tomatoes-served-with-french-fries-sauces-dark.jpg" alt="Food Dish">
+        </div>
+    </section>
+
+    <!-- ================= GALLERY SECTION ================= -->
+    <!-- <section class="gallery-section">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1559847844-5315695dadae" alt="Seafood dish">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947" alt="Restaurant interior">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Grilled fish">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Seafood platter">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Salad bowl">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" alt="Vegetable dish">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1553621042-f6e147245754" alt="Cooking ingredients">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141" alt="Chef preparing food">
+            </div>
+        </div>
+    </section> -->
+
+    <div class="menu-grid-container">
+        <!-- APPETIZERS SECTION - LEFT COLUMN -->
+        <section class="menu-section fade-in" id="menu-section1">
+            <h2 class="section-title">APPETIZERS</h2>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">French Fries</div>
+                    <div class="item-description">Golden, crispy, and the kind of snack that whispers, "It's okay, you got this." Regular or Cajun. Masala or Parmesan Truffle - $1.00</div>
+                </div>
+                <div class="item-price">$6.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Onion Rings</div>
+                    <div class="item-description">A golden-battered whole onion rings, deep-fried to crispy perfection and served with our house-made spicy cilantro ranch.</div>
+                </div>
+                <div class="item-price">$7.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Fried Pickle</div>
+                    <div class="item-description">Texas-style pickles, fried 'til they forget they were cucumbers.</div>
+                </div>
+                <div class="item-price">$7.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Mozzarella Sticks</div>
+                    <div class="item-description">Breaded mozzarella sticks coated in a crispy, seasoned breadcrumb blend with garlic, herbs, and a touch of spice. Fried golden brown and served with warm marinara or ranch for dipping.</div>
+                </div>
+                <div class="item-price">$8.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Jalapeño Poppers</div>
+                    <div class="item-description">Fresh jalapeños stuffed with creamy cheddar cheese, lightly breaded and fried until golden.</div>
+                </div>
+                <div class="item-price">$8.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Indian Veg. Samosa</div>
+                    <div class="item-description">Crispy pastry filled with a spiced blend of potatoes, peas, and traditional Indian seasonings.</div>
+                </div>
+                <div class="item-price">$9.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">White Queso Dip</div>
+                    <div class="item-description">Creamy queso blanco topped with fresh pico de gallo. Served with homemade chips. Brisket or no flavor.</div>
+                </div>
+                <div class="item-price">$10.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Bacon Wrapped Jalapeños</div>
+                    <div class="item-description">Jalapeños stuffed with cream cheese wrapped in crispy bacon, and finished with a sweet-hot honey glaze. Brisket or no flavor.</div>
+                </div>
+                <div class="item-price">$10.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Fried Calamari</div>
+                    <div class="item-description">Lightly fried rings of deliciousness. Fancy, but still fun.</div>
+                </div>
+                <div class="item-price">$10.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Fresh Raw Oysters on the Half Shell</div>
+                    <div class="item-description">Salty, fresh, and straight from the Gulf - mermaid approved.</div>
+                </div>
+                <div class="item-price">$12.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Nacho</div>
+                    <div class="item-description">Yellow corn tortilla chips with queso blanco, ground beef, fresh lettuce, pico de gallo, sour cream and jalapeños. Chicken or Brisket - $3.00</div>
+                </div>
+                <div class="item-price">$13.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Loaded Fries</div>
+                    <div class="item-description">Crispy golden fries topped with melted cheese, bacon, sliced jalapeños, and house toppings.</div>
+                </div>
+                <div class="item-price">$14.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Divine Wolf Sampler</div>
+                    <div class="item-description">A delicious assortment featuring crispy mozzarella sticks, golden onion rings, seasoned fries, spicy jalapeño poppers, and crunchy fried pickles-perfect for sharing.</div>
+                </div>
+                <div class="item-price">$15.00</div>
+            </div>
+        </section>
+
+        <!-- SALADS SECTION - RIGHT COLUMN -->
+        <section class="menu-section fade-in">
+            <h2 class="section-title">SALADS</h2>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">House Salad</div>
+                    <div class="item-description">Fresh, simple, and dependable - like a friend who always shows up with something good.</div>
+                </div>
+                <div class="item-price">$6.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Caesar Salad</div>
+                    <div class="item-description">Crisp romaine, Parmesan, and croutons - simple, clean, and timeless... like a salad that actually gets you.</div>
+                </div>
+                <div class="item-price">$10.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Grilled Chicken Salad</div>
+                    <div class="item-description">Fresh greens topped with tender grilled chicken and crisp vegetables, served with your choice of dressing.</div>
+                </div>
+                <div class="item-price">$14.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Buffalo Chicken Salad</div>
+                    <div class="item-description">Fresh greens topped with crispy chicken tossed in spicy buffalo sauce, accompanied by crisp vegetables and your choice of dressing for a bald, flavorful salad.</div>
+                </div>
+                <div class="item-price">$15.00</div>
+            </div>
+        </section>
+
+        <!-- SIGNATURE DISHES - LEFT COLUMN -->
+        <section class="menu-section fade-in" id="menu-section2">
+            <h2 class="section-title">BURGERS / SANDWICHES</h2>
+            <p><em>All our hamburgers are made with premium Angus beef.</em></p>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Build your own Burger</div>
+                    <div class="item-description">Your rules. Your toppings. Your masterpiece.</div>
+                    <div class="item-details">
+                        <strong style="font-size: 15px; color: black;">Condiments:</strong> Ketchup, Mustard, Mayo, Lettuce, Tomato, Pickles.<br>
+                        <strong style="font-size: 15px; color: black;">Cheese:</strong> American, Cheddar, PepperJack, Swiss - $1<br>
+                        <strong style="font-size: 15px; color: black;">Veggies:</strong> Onion, Jalapeño, Mushrooms, Avocado - $1<br>
+                        <strong style="font-size: 15px; color: black;">2 slices of Bacon:</strong> $2<br>
+                        <strong style="font-size: 15px; color: black;">Fries:</strong> $5
+                    </div>
+                </div>
+                <div class="item-price">$11.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Spicy Diablo Burger</div>
+                    <div class="item-description">Juicy 8oz hand-formed beef patty with melted pepper jack, roasted jalapeños, chipotle aioli, and fresh garden toppings.</div>
+                </div>
+                <div class="item-price">$13.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Maharaja Burger</div>
+                    <div class="item-description">A spiced potato patty with <strong>Indian-inspired</strong> flavors, topped with fresh veggies and melted cheese, served on a toasted bun.</div>
+                </div>
+                <div class="item-price">$13.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Mumbai Masala Sandwich</div>
+                    <div class="item-description">Golden grilled sandwich with spiced potato slices, layered with onions, tomatoes, and cucumber, topped with Paperjack cheese and spicy cilantro ranch.</div>
+                </div>
+                <div class="item-price">$10.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">BLT Sandwich</div>
+                    <div class="item-description">Crispy bacon, fresh lettuce, and ripe tomatoes layered on toasted bread with creamy mayo-a timeless classic.</div>
+                </div>
+                <div class="item-price">$12.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">BBQ Brisket Sandwich</div>
+                    <div class="item-description">Slow-smoked brisket tossed in BBQ sauce, topped with fresh coleslaw and pickles, served on a fresh bun.</div>
+                </div>
+                <div class="item-price">$12.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Beeville Hot Honey Chicken</div>
+                    <div class="item-description">Crispy hand-breaded chicken, drizzled with hot honey, topped with pickles and dill mayo on a sesame-seed bun.</div>
+                </div>
+                <div class="item-price">$13.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Spicy Grilled Chicken Sandwich</div>
+                    <div class="item-description">Grilled chicken breast drizzled with spicy cilantro ranch, topped with jalapeños, and served on a sesame seed bun.</div>
+                </div>
+                <div class="item-price">$13.00</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <div class="item-name">Divine Wolf Club Sandwich</div>
+                    <div class="item-description">A classic three-layer sandwich featuring turkey, ham, crispy bacon, fresh lettuce, tomato, and cheese, finished with mayonnaise on toasted Texas toast. Served with seasoned fries.</div>
+                </div>
+                <div class="item-price">$15.00</div>
+            </div>
+
+            <!-- BEST DAMN WINGS -->
+            <div class="menu-category" style="margin-top: 40px;">
+                <h3 class="category-title">BEST DAMN WINGS</h3>
+                <h4>TRADITIONAL WINGS</h4>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">6 Wings</div>
+                    </div>
+                    <div class="item-price">$12.00</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">12 Wings</div>
+                    </div>
+                    <div class="item-price">$16.00</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">18 Wings</div>
+                    </div>
+                    <div class="item-price">$23.00</div>
+                </div>
+
+                <h4>BONELESS WINGS</h4>
+                <p><em>Small - $10.00 | Medium - $14.00</em></p>
+                <p><strong>Hot:</strong> Buffalo, Mango Habanero, Spicy Cilantro, Hot Honey</p>
+                <p><strong>Medium:</strong> Garlic Parmesan, BBQ, Sweet Chili</p>
+                <p><strong>Mild:</strong> Lemon Pepper, Ranch</p>
+            </div>
+        </section>
+
+        <section class="menu-section fade-in">
+            <h2 class="section-title">PIZZAS/DESSERTS</h2>
+
+            <!-- PIZZAS -->
+            <div class="menu-category" style="margin-top: 40px;">
+                <h3 class="category-title">PIZZAS</h3>
+                <p><em>10"</em></p>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">Cheese Pizza</div>
+                        <div class="item-description">Made with homemade dough and topped with savory pizza sauce and melted cheese.</div>
+                    </div>
+                    <div class="item-price">$10.00</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">Pepperoni Lovers</div>
+                        <div class="item-description">Made with homemade dough, topped with savory pizza sauce, melted cheese, and a generous layer of pepperoni.</div>
+                    </div>
+                    <div class="item-price">$12.00</div>
+                </div>
+            </div>
+
+            <!-- DESSERTS -->
+            <div class="menu-category" style="margin-top: 40px;">
+                <h3 class="category-title">DESSERTS</h3>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">New York Cheesecake</div>
+                        <div class="item-description">Classic New York-style cheesecake, rich and creamy with a buttery crust, served with your choice of chocolate or strawberry drizzle.</div>
+                    </div>
+                    <div class="item-price">$8.00</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">Deep Fried Oreo</div>
+                        <div class="item-description">Classic Oreo cookies dipped in a light, crispy batter and fried until golden. Finished with a dusting of powdered sugar for a warm, gooey treat with the perfect crunch.</div>
+                    </div>
+                    <div class="item-price">$9.00</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <div class="item-name">Brownie Sundae</div>
+                        <div class="item-description">A warm, fudgy brownie topped with smooth vanilla ice cream and finished with a rich chocolate drizzle-an indulgent classic perfect for any occasion.</div>
+                    </div>
+                    <div class="item-price">$10.00</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= CATERING SECTION ================= -->
+    <section class="catering-scroll-section">
+        <div class="catering-scroll-content">
+            <h1 class="catering-scroll-title">CATERING</h1>
+            <h3 class="catering-scroll-subtitle">
+                Elevate Every Occasion with Divine Wolf Catering
+            </h3>
+            <p class="catering-scroll-text">
+                Bring bold flavors and exceptional quality to your next event with Divine Wolf Catering. From intimate
+                gatherings to large-scale celebrations, our chef-driven menus are crafted with fresh, premium
+                ingredients to impress every guest. Let us create a customized dining experience that turns your event
+                into something truly unforgettable.
+            </p>
+            <a href="#" class="catering-scroll-btn">CATERING</a>
+        </div>
+    </section>
+
+    <div class="top-red"></div>
+
+    <!-- ================= REVIEWS SECTION ================= -->
+    <section class="reviews">
+        <h1>REVIEWS</h1>
+        <div class="slider-wrapper">
+            <button class="arrow" onclick="manualPrev()"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider">
+                <div class="quote-icon quote-left">"</div>
+                <div class="slides" id="slides">
+                    <div class="slide">
+                        <div class="source">Review by - Google</div>
+                        <div class="reviewer">Chris B: <span class="stars">★★★★★</span></div>
+                        <div class="review-text">
+                            Truly delicious quality of food. Very fresh cooked very well. The staff is very friendly and
+                            educational.
+                            The attention to detail in the kitchen is unmatched in the region.
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="source">Review by - Google</div>
+                        <div class="reviewer">Jenn R: <span class="stars">★★★★★</span></div>
+                        <div class="review-text">
+                            Cannot say enough great things about this establishment. The food was AMAZING.
+                            Oysters were fresh and delicious. We will 100% be back and recommend.
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="source">Review by - Google</div>
+                        <div class="reviewer">Ashley: <span class="stars">★★★★★</span></div>
+                        <div class="review-text">
+                            Got the oysters Rockefeller for the appetizer and they were amazing as always.
+                            Shrimp and scallop Cajun pasta was very yummy. Solid restaurant.
+                        </div>
+                    </div>
+                </div>
+                <div class="quote-icon quote-right">"</div>
+            </div>
+            <button class="arrow" onclick="manualNext()"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="dots" id="dots"></div>
+        <div class="controls">
+            <button class="pause" id="pauseBtn" onclick="toggleAutoPlay()">⏸</button>
+        </div>
+    </section>
+
+    <!-- ================= JOIN OUR TEAM ================= -->
+    <section class="join-team" id="joinTeam">
+        <h1>JOIN OUR TEAM</h1>
+        <div class="tagline">Be Part of Something Delicious with Divine Wolf Experience</div>
+        <p>
+            We're always looking for passionate individuals who thrive on great food, teamwork, and exceptional
+            hospitality. If you're motivated, eager to grow, and excited to help create unforgettable dining moments,
+            Divine Wolf is the place for you. Explore our opportunities and start your journey with us today.
+        </p>
+        <a href="JOBS.html"><button class="apply-btn">APPLY</button></a>
+    </section>
+
+    <!-- ================= NEWSLETTER + MAP ================= -->
+    <div class="top-yellow"></div>
+    <section class="newsletter-section">
+        <div class="newsletter-left">
+            <h1>STAY IN THE<br>PACK WITH <br> DIVINE WOLF</h1>
+            <p>Sign up for our newsletter and be the first to receive exclusive offers, special events, and insider
+                updates.!</p>
+            <div class="form-group">
+                <label>Email (required)</label>
+                <!-- Change your form action to point to your PHP file -->
+                <form action="mailer.php" method="POST" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <input type="email" name="email" placeholder="e.g. email@example.com" required
+                        style="flex: 1; min-width: 200px; padding: 12px; border: 2px solid #ddd; border-radius: 8px;">
+                    <button type="submit"
+                        style="padding: 12px 24px; background: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                        SUBMIT
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="newsletter-right">
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER GRID ================= -->
+    <section class="footer-grid">
+        <div class="box">
+            <h3>LOCATION</h3>
+            <p>702 S Washington St, Beeville, TX 78102, United States</p>
+        </div>
+        <div class="box">
+            <h3>FIND US ON</h3>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-google"></i>
+            </div>
+        </div>
+        <div class="box">
+            <h3>HOURS</h3>
+            <p>Monday Closed<br>Tuesday-Sunday 11am-10pm</p>
+        </div>
+        <div class="box">
+            <h3>CONTACT US</h3>
+            <p class="phone">+13615422005</p>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="powered">
+        <p>© 2024 Divine Wolf <strong><span>Sports Bar & </span>Grill.</strong></p>
+        <a> All rights reserved. Website design by Arrastur Innovation.</a>
+    </footer>
+
+    <!-- ================= CHAT ICON ================= -->
+    <div class="chat-icon">💬</div>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // ================= MOBILE MENU =================
+        const toggle = document.getElementById("toggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const closeMenu = document.getElementById("closeMenu");
+
+        toggle.addEventListener("click", () => {
+            mobileMenu.classList.add("active");
+        });
+
+        closeMenu.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !toggle.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // ================= HERO ANIMATION =================
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const heroSection = document.querySelector('.hero-container');
+        if (heroSection) heroObserver.observe(heroSection);
+
+        // ================= SCROLL ANIMATIONS =================
+        // Fusion section animation
+        const animateElements = document.querySelectorAll('.animate-left');
+        const fusionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        animateElements.forEach(el => fusionObserver.observe(el));
+
+        // Catering section animation
+        const cateringObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const elements = entry.target.querySelectorAll('[class*="catering-scroll"]');
+                    elements.forEach(el => el.classList.add('catering-scroll-show'));
+                }
+            });
+        }, { threshold: 0.4 });
+
+        const cateringSection = document.querySelector('.catering-scroll-section');
+        if (cateringSection) cateringObserver.observe(cateringSection);
+
+        // Join team animation
+        const joinTeamObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const joinTeamSection = document.getElementById("joinTeam");
+        if (joinTeamSection) joinTeamObserver.observe(joinTeamSection);
+
+        // ================= REVIEW SLIDER =================
+        const slides = document.getElementById("slides");
+        const dotsBox = document.getElementById("dots");
+        const pauseBtn = document.getElementById("pauseBtn");
+        const slideElements = document.querySelectorAll(".slide");
+        const total = slideElements.length;
+        const reviewsSection = document.querySelector('.reviews');
+
+        let index = 0;
+        let playing = false;
+        let timer;
+        let autoPlayEnabled = true;
+
+        // Create dots
+        slideElements.forEach((_, i) => {
+            const d = document.createElement("span");
+            d.className = "dot" + (i === 0 ? " active" : "");
+            d.onclick = () => {
+                index = i;
+                update();
+                if (autoPlayEnabled) resetTimer();
+            };
+            dotsBox.appendChild(d);
+        });
+        const dots = document.querySelectorAll(".dot");
+
+        function update() {
+            if (total === 0) {
+                slides.style.transform = `translateX(0%)`;
+                dotsBox.innerHTML = '';
+                return;
+            }
+
+            index = (index % total + total) % total;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+
+            dots.forEach((d, i) => {
+                d.classList.remove("active");
+                if (i === index) {
+                    d.classList.add("active");
+                }
+            });
+        }
+
+        function next() {
+            index = (index + 1) % total;
+            update();
+        }
+
+        function prev() {
+            index = (index - 1 + total) % total;
+            update();
+        }
+
+        function startAutoPlay() {
+            if (autoPlayEnabled && !playing) {
+                playing = true;
+                pauseBtn.innerHTML = "⏸";
+                timer = setInterval(next, 5000);
+            }
+        }
+
+        function stopAutoPlay() {
+            if (playing) {
+                playing = false;
+                pauseBtn.innerHTML = "▶";
+                clearInterval(timer);
+            }
+        }
+
+        function resetTimer() {
+            if (autoPlayEnabled && playing) {
+                clearInterval(timer);
+                timer = setInterval(next, 5000);
+            }
+        }
+
+        function manualNext() {
+            next();
+            if (autoPlayEnabled) resetTimer();
+        }
+
+        function manualPrev() {
+            prev();
+            if (autoPlayEnabled) resetTimer();
+        }
+
+        function toggleAutoPlay() {
+            if (autoPlayEnabled) {
+                if (playing) {
+                    stopAutoPlay();
+                } else {
+                    startAutoPlay();
+                }
+            }
+        }
+
+        // Auto-play based on visibility
+        const sliderObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (autoPlayEnabled) startAutoPlay();
+                } else {
+                    stopAutoPlay();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (reviewsSection) {
+            sliderObserver.observe(reviewsSection);
+        }
+
+        // Initialize slider
+        update();
+
+        // ================= MAP =================
+        function initMap() {
+            const pin = [27.7103, -97.4040];
+            const map = L.map('map', {
+                center: pin,
+                zoom: 14,
+                dragging: false,
+                scrollWheelZoom: false,
+                touchZoom: false,
+                doubleClickZoom: false,
+                boxZoom: false,
+                keyboard: false,
+                zoomControl: false
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            L.marker(pin).addTo(map);
+        }
+
+        // Initialize map when page loads
+        document.addEventListener('DOMContentLoaded', initMap);
+    </script>
+</body>
+</html>
